@@ -3,7 +3,7 @@
 <meta charset="UTF-8"/>
 <BODY>
     <?php
-        $get1 = filter_input(INPUT_GET, "var_codigo")
+        $get1 = filter_input(INPUT_GET, "var_codigo");
         $get2 = filter_input(INPUT_GET, "var_nome");
         $get3 = filter_input(INPUT_GET, "var_email");
         $get4 = filter_input(INPUT_GET, "var_senha");
