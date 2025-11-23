@@ -11,6 +11,8 @@
         <td><b>Nome</b></td>
         <td><b>Email</b></td>
         <td><b>Data de Cadastro</b></td>
+        <td><b>Editar</b></td>
+        <td><b>Excluir</b></td>
     </tr>
 
     <?php
@@ -24,20 +26,20 @@
         while($i = mysqli_fetch_assoc($resultado)){
     ?>
         <tr>
-            <td><?php echo $i['codigo'];?></td>
-            <td><?php echo $i['nome'];?></td>
-            <td><?php echo $i['email'];?></td>
-            <td><?php echo $i['Data de Cadastro'];?></td>
+            <td><?php echo $i['codusu'];?></td>
+            <td><?php echo $i['nomusu'];?></td>
+            <td><?php echo $i['emausu'];?></td>
+            <td><?php echo $i['datcad'];?></td>
 
 
-            <td><a href="<?php echo "usuarioEditar.php?var_cod=". $i['codigo']."&var_nome=".$i['nome']."&var_email=".$i['email']?>">Alterar</a></td>
-            <td><a href="<?php echo "usuarioDelete.php?var_cod=". $i['codigo']?>">Excluir</a></td>
+            <td><a href="<?php echo "usuarioEditar.php?var_cod=". $i['codusu']."&var_nome=".$i['nomusu']."&var_email=".$i['emausu']?>">Alterar</a></td>
+            <td><a href="<?php echo "usuarioDelete.php?var_cod=". $i['codusu']?>">Excluir</a></td>
         </tr>
     <?php
         }
     ?>
     </table>
-    <h4><a href="vendedor.html">Cadastrar novo USUÁRIO</a></h4>
+    <h4><a href="usuario.html">Cadastrar novo USUÁRIO</a></h4>
 
     <?php
         mysqli_close($conexao);

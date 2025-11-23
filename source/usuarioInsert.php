@@ -8,7 +8,7 @@
     $senha  = $_POST["input_senha"];
 
     $sql = "INSERT INTO usuario(nomusu, emausu, senusu)
-        VALUES ('{$nome}', '{$email}', '{$senha}')";
+        VALUES ('{$nome}', '${email}', '${senha}')";
 
     mysqli_query($conexao,$sql) or die (mysqli_error());
 
