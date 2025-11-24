@@ -14,32 +14,43 @@
         <td><b>Excluir</b></td> 
      </tr>
 
-       <?php
-            // criar conexao
-            include_once("_conexao.php");
-            $conexao = conectaBD();
+<?php
+include_once("_conexao.php");
+$conexao = conectaBD();
 
-            $sql = "SELECT * FROM anexo;";
-            $resultado = mysqli_query($conexao, $sql);
+$sql = "SELECT * FROM anexo;";
+$resultado = mysqli_query($conexao, $sql);
 
-            while($i = mysqli_fetch_assoc($resultado)){
-        ?>
-             <tr>
-                <td><?php echo $i['codane'];?></td>
-                <td><?php echo $i['codtar'];?></td>
-                <td><?php echo $i['nomarq'];?></td>
+while($i = mysqli_fetch_assoc($resultado)){
+?>
+     <tr>
+        <td><?php echo $i['codane'];?></td>
+        <td><?php echo $i['codtar'];?></td>
+        <td><?php echo $i['nomarq'];?></td>
 
-                <td><a href="<?php echo "anexoEditar.php?codcat=". $i['codane']."&codtar=".$i['codtar']."&nomarq=".$i['nomarq']?>">Alterar</a></td>
-                <td><a href="<?php echo "anexoDelete.php?codcat=". $i['codane']?>">Excluir</a></td>
-             </tr>
-            <?php
-           }
-            ?>
+        <td>
+            <a href="<?php 
+                echo "anexoEditar.php?codane=". $i['codane'] .
+                     "&codtar=" . $i['codtar'] .
+                     "&nomarq=" . urlencode($i['nomarq']);
+            ?>">Alterar</a>
+        </td>
+
+        
+        <td>
+            <a href="<?php 
+                echo "anexoDelete.php?codane=" . $i['codane'];
+            ?>">Excluir</a>
+        </td>
+     </tr>
+<?php
+}
+?>
      </table>
-     <h4><a href="anexo.html">Cadastrar novo ANEXO</a></h4>
+     <h4><a href="anexo.php">Cadastrar novo ANEXO</a></h4>
 
-     <?php
-      mysqli_close($conexao);
-     ?>
+<?php
+mysqli_close($conexao);
+?>
 </BODY>
 </HTML>

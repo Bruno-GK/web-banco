@@ -20,7 +20,6 @@
     </tr>
 
     <?php
-        // criar conexao
         include_once("_conexao.php");
         $conexao = conectaBD();
 
@@ -44,7 +43,7 @@
             <td>
                 <a href="<?php echo 
                     "tarefaEditar.php?".
-                    "var_cod=" . $i['codtar'] .
+                    "var_codtar=" . $i['codtar'] .
                     "&var_codusu=" . $i['codusu'] .
                     "&var_codcat=" . $i['codcat'] .
                     "&var_titulo=" . urlencode($i['titulo']) .
@@ -62,12 +61,9 @@
         </tr>
     <?php
         }
+        mysqli_close($conexao);
     ?>
     </table>
     <h4><a href="tarefa.php">Cadastrar novo TAREFA</a></h4>
-
-    <?php
-        mysqli_close($conexao);
-    ?>
 </BODY>
 </HTML>

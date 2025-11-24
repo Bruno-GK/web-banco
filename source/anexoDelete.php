@@ -3,8 +3,8 @@
     include_once("_conexao.php");
     $conexao= conectaBD();
 
-    $cod = filter_input(INPUT_GET, "codane");
-    $dados= "DELETE FROM anexo WHERE codigo = {$codane}";
+    $codane = filter_input(INPUT_GET, "codane");
+    $dados= "DELETE FROM anexo WHERE codane = {$codane}";
 
     mysqli_query($conexao, $dados) or die(mysqli_error());
 

@@ -17,7 +17,7 @@
      <input type=hidden name=tabela value="anexo">
 
    
-     <input hidden name="codane" size="30" value="<?php echo $get1?>">
+     <input hidden name="input_codane" size="30" value="<?php echo $get1?>">
 
     <b> Tarefa vinculada: </b> <input type="text" name="input_codtar" size="30" value="<?php echo $get2?>">
        </br></br>

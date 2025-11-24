@@ -61,7 +61,7 @@
         <b>Status: </b> <input type="text" name="input_status" size="9">
         </br></br>
 
-        <b>Prioridade: </b> <input type="text" name="input_prioriridade" size="4">
+        <b>Prioridade: </b> <input type="text" name="input_priori" size="4">
         </br></br>
 
         <input type="date" name="input_datcri" hidden>
